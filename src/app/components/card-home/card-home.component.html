@@ -1,0 +1,9 @@
+<div class="h-96 flex flex-col items-center overflow-hidden group relative w-full rounded-lg bg-myviolet2 cursor-pointer shadow-md">
+    <div class="w-full h-full">
+      <img class="h-full w-full object-cover" [src]="image" alt="" />
+  </div>
+  <div [class]="'px-5 bg-myviolet w-full absolute bottom-0 left-0 transform translate-y-[calc(100%-60px)] transition-transform duration-500 group-hover:translate-y-0'">
+      <p class="flex items-center justify-center text-xl lg:text-3xl font-bold text-white h-[60px]">{{number}}</p>
+      <p class="pb-5 text-center text-xl lg:text-3xl font-bold text-white">{{title}}</p>
+  </div>
+</div>
