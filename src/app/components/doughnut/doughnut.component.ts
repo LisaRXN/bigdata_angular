@@ -5,12 +5,12 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 Chart.register(...registerables, ChartDataLabels);
 
 @Component({
-  selector: 'app-pie',
+  selector: 'app-doughnut',
   imports: [],
-  templateUrl: './pie.component.html',
-  styleUrl: './pie.component.css'
+  templateUrl: './doughnut.component.html',
+  styleUrl: './doughnut.component.css'
 })
-export class PieComponent implements AfterViewInit  {
+export class DoughnutComponent implements AfterViewInit {
 
   chart!: Chart;
 
@@ -36,7 +36,7 @@ export class PieComponent implements AfterViewInit  {
     }
 
     this.chart = new Chart(ctx, {
-      type: 'pie',  // Changez ici en 'pie' pour le graphique en camembert
+      type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{

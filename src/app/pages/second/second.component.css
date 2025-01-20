@@ -1,0 +1,23 @@
+/* swiper-container::part(bullet) {
+    position:absolute;
+} */
+
+swiper-container {
+    --swiper-theme-color: #ababab;
+    --swiper-navigation-size: 22px;
+    /* --swiper-navigation-color: #e1e1e1; */
+    /* --swiper-navigation-top-offset: 10px; */
+    /* --swiper-navigation-sides-offset: 10px; */
+    --swiper-pagination-color: #5a55cd;
+    /* --swiper-pagination-bullet-border-radius: 6px; */
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+    /* --swiper-pagination-bullet-vertical-gap: 4px; */
+    --swiper-pagination-bullet-size: 15px;
+    /* --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px; */
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: #ababab;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bottom: 0rem;
+    --swiper-preloader-color: var(--swiper-theme-color);
+}

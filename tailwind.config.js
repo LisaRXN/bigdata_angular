@@ -9,7 +9,18 @@ module.exports = {
         'mypourpre':'#ff7073',
         'myviolet2':'#eae9fb',
         'myturquoise2':'#e8fdfe',
-        'mypourpre2':'#fcd3d2'
+        'mypourpre2':'#fcd3d2',
+        'mybleu1':'#4f52ff',
+        'mybleu2':'#91b3fa',
+        'myrose1':'#e9605a',
+        'myrose2':'#ff928f'
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'grotesk': ['Space Grotesk', 'serif'],
+        'coda': ['Coda', 'serif'],
+        'lexend': ['Lexend', 'serif'],
+        'quantico': ['Quantico', 'serif'],
       },
     },
   },

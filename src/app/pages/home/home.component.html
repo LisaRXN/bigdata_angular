@@ -1,18 +1,13 @@
-<!-- <div (click)="goToSection()" class="h-[80px] w-[80px] bottom-10 right-10 fixed rounded-full flex items-center p-4">
-  <span class="absolute left-0 top-0 h-full w-full rounded-full bg-slate-200 opacity-50"></span>
-  <img class="object-contain rounded-full" src="/img/btn-pourpre.png" alt="">
-</div> -->
-
-<div class="p-20 h-[700px] lg:h-screen w-full bg-myviolet flex flex-col">
-  <div class="h-1/3">
-    <h1 class="text-8xl font-bold text-white">Data Analyse</h1>
-    <h1 class="text-8xl font-bold text-myturquoise">Project</h1>
+<div class="p-20 h-screen w-full bg-slate-600 flex flex-col">
+  <div class="h-1/4">
+    <h1 class="text-8xl font-grotesk font-extrabold text-white">Data Analyse</h1>
+    <h1 class="text-8xl font-grotesk font-extrabold text-mybleu1">Project</h1>
   </div>
 
-  <div class="flex items-center justify-center gap-40 h-2/3">
+  <div class="flex items-center justify-center gap-32 lg:gap-40 h-3/4">
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
-      <img src="/img/icon2.png" class="object-cover" alt="" />
-      <span class="text-2xl text-white text-center">
+      <img src="/img/icon2-bleu.png" class="object-cover h-24 2xl:h-40" alt="" />
+      <span class="text-2xl text-white text-center font-grotesk">
         <app-countup
           [startValue]="0"
           [endValue]="3200000000"
@@ -22,8 +17,8 @@
       </span>
     </div>
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
-      <img src="/img/icon1.png" class="object-cover" alt="" />
-      <span class="text-2xl text-white text-center">
+      <img src="/img/icon-bleu.png" class="object-cover h-24 2xl:h-40" alt="" />
+      <span class="text-2xl text-white text-center font-grotesk">
         <app-countup
           [startValue]="0"
           [endValue]="250540400"
@@ -33,8 +28,8 @@
       </span>
     </div>
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
-      <img src="/img/icon3.png" class="object-cover" alt="" />
-      <span class="text-2xl text-white text-center">
+      <img src="/img/icon3-bleu.png" class="object-cover h-24 2xl:h-40" alt="" />
+      <span class="text-2xl text-white text-center font-grotesk">
         <app-countup
           [startValue]="0"
           [endValue]="1"
@@ -47,13 +42,14 @@
 </div>
 
 
-<section class="flex w-full items-center px-20 h-[700px] lg:h-screen">
-  <app-title-big></app-title-big>
-  <img class="w-full h-[500px] object-cover" src="/img/consumers.png" alt="" />
+<section class="flex w-full items-center justify-start h-screen p-20">
+  <div class="w-1/2 2xl:p-40"><app-title-big></app-title-big></div>
+  <div class="w-1/2"><img class="object-cover" src="/img/consumers.png" alt="" /></div>
+
 </section>
 
-<section class="flex items-center justify-center lg:h-screen w-full gap-10 bg-slate-100 p-20">
-  <div class="flex-1">
+<section class="flex items-center justify-center lg:h-screen w-full gap-10 xl:gap-20 bg-slate-100 p-20">
+  <div class="flex-1 h-2/3">
     <app-card-home
       (click)="navigate()"
       image="/img/stocks.jpg"
@@ -62,7 +58,7 @@
     ></app-card-home>
   </div>
 
-  <div class="flex-1">
+  <div class="flex-1 h-2/3">
     <app-card-home
       image="/img/decision.jpg"
       title="Improved store organization through the analysis of purchase associations"
@@ -70,7 +66,7 @@
     ></app-card-home>
   </div>
 
-  <div class="flex-1">
+  <div class="flex-1 h-2/3">
     <app-card-home
     image="/img/stars.jpg"
     title="Raising awareness of sustainable shopping practices by segmenting users"

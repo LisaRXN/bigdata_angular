@@ -1,14 +1,13 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { BarComponent } from "../../components/bar/bar.component";
 import { PieComponent } from "../../components/pie/pie.component";
 import { LineComponent } from "../../components/line/line.component";
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
-import { WindowService } from '../../services/window.service';
 
 @Component({
   selector: 'app-first',
-  imports: [BarComponent, PieComponent, LineComponent,CommonModule],
+  imports: [BarComponent, PieComponent, LineComponent, CommonModule],
   templateUrl: './first.component.html',
   styleUrl: './first.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

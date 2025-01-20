@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   private router = inject(Router)
   private windowService = inject(WindowService)
+  isMenuOpen = false;
+
 
   ngOnInit():void {
     this.router.events.subscribe(event => {
@@ -37,6 +39,14 @@ export class AppComponent implements OnInit {
         behavior: "smooth",
       });
     }
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  navigateHome(): void{
+    this.router.navigate(['home'])
   }
 
 }
