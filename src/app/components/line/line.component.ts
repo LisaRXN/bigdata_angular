@@ -20,7 +20,7 @@ export class LineComponent implements AfterViewInit {
   labeldata: string[] = ['Monday', 'Thusday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'];
   realdata:number[] = [562388, 552505, 439399, 411314, 401903, 427295, 420070];
   realdata2:number[] = [145979, 150965, 139601, 134859, 132307, 133821, 128717];
-  colordata: string[] = ['#5a55cd', '#6b66d1', '#7b77d4', '#8b88d7', '#9b98db', '#aba9de', '#bbbae2', '#cccbe5', '#dcdce9', '#ededec', '#ffffe0'];
+  colordata: string[] = ['#4f52ff', '#ff928f'];
 
 
   ngAfterViewInit(): void {
@@ -42,12 +42,12 @@ export class LineComponent implements AfterViewInit {
         datasets: [
           {
           data: data,
-          borderColor: '#01c3cb', 
+          borderColor: '#4f52ff', 
           label: 'Regular Visitors'
         },
           {
           data: data2,
-          borderColor: '#ff7073', 
+          borderColor: '#ff928f', 
           label: 'Unique Visitors'
         }
       ],

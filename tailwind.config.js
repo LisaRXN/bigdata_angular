@@ -12,8 +12,11 @@ module.exports = {
         'mypourpre2':'#fcd3d2',
         'mybleu1':'#4f52ff',
         'mybleu2':'#91b3fa',
+        'mybleu3':'#4042e2',
+        'mybleu4':'#e9effd',
         'myrose1':'#e9605a',
-        'myrose2':'#ff928f'
+        'myrose2':'#ff928f',
+        'myrose3':'#fadcda',
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
@@ -21,8 +24,12 @@ module.exports = {
         'coda': ['Coda', 'serif'],
         'lexend': ['Lexend', 'serif'],
         'quantico': ['Quantico', 'serif'],
+        'open': ['Open Sans', 'serif'],
+        'fira': ['Fira Sans', 'sans serif'],
+        'noto': ['Noto Sans', 'sans serif'],
       },
     },
   },
+  plugins: [],
   plugins: [],
 };

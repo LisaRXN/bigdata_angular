@@ -14,7 +14,6 @@ export class TitleBigComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    console.log(window.scrollY)
     this.isVisible = window.scrollY > 150;
   }
 }

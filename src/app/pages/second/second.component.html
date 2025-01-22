@@ -1,16 +1,17 @@
-<div class="p-10 h-screen w-full bg-mypourpre flex flex-col gap-10 overflow-hidden">
-    <h1 class="leading-tight text-4xl lg:text-6xl 2xl:text-8xl font-bold text-white py-5 break-words">
-        How can we optimize the store layout through purchase associations to:
-    </h1>
-    <h1 
+<div class="relative p-10 2xl:p-20 h-screen w-full bg-mybleu1 flex flex-col gap-10 overflow-hidden">
+  <h2 class="text-4xl 2xl:text-6xl leading-snug 2xl:leading-normal w-2/3 2xl:w-1/2 text-slate-100 font-bold">  
+    How can we optimize the store layout through purchase associations to:</h2>
+  <img src="/img/ban-decision.png" class="absolute bottom-0 right-0 xl:h-full h-3/4 object-contain opacity-50 p-10" alt="">
+  
+  @if(isReady){  
+  <h1 
     [ngClass]="{
       'leading-tight': true,
       'hidden':isHidden,
       'text-4xl':true,
-      'lg:text-6xl':true,
-      '2xl:text-8xl':true,
+      '2xl:text-6xl':true,
       'font-bold':true,
-      'text-myviolet':true,
+      'text-myrose2':true,
       'translate-x-20': !isVisible,
       'translate-x-0': isVisible,
       'transition-all': true,
@@ -18,17 +19,16 @@
       'opacity-0': !isVisible
     }"
     >
-     Minimize customer shopping time
+    ✓ Minimize customer shopping time
     </h1>
     <h1 
     [ngClass]="{
       'hidden':isHidden,
       'leading-tight': true,
       'text-4xl':true,
-      'lg:text-6xl':true,
-      '2xl:text-8xl':true,
+      '2xl:text-6xl':true,
       'font-bold':true,
-      'text-myviolet':true,
+      'text-myrose2':true,
       'translate-x-20': !isVisible2,
       'translate-x-0': isVisible2,
       'transition-all': true,
@@ -36,17 +36,16 @@
       'opacity-0': !isVisible2
     }"
     >
-    Reduce overconsumption
+    ✓ Reduce overconsumption
     </h1>
     <h1 
     [ngClass]="{
       'hidden':isHidden,
       'leading-tight': true,
       'text-4xl':true,
-      'lg:text-6xl':true,
-      '2xl:text-8xl':true,
+      '2xl:text-6xl':true,
       'font-bold':true,
-      'text-myviolet':true,
+      'text-myrose2':true,
       'translate-x-20': !isVisible3,
       'translate-x-0': isVisible3,
       'transition-all': true,
@@ -54,20 +53,24 @@
       'opacity-0': !isVisible3
     }"
     >
-    Increase customer well-being
+    ✓ Increase customer well-being
     </h1>
+  }
   </div>
 
 
-  <section class="h-[200px] bg-slate-100 flex items-center w-full">
-    <div class="ml-[-100px] bg-mypourpre2 rounded-xl w-full md:w-[650px] flex items-center p-5">
-      <p class="ml-[150px] font-bold text-2xl sm:text-4xl text-mypourpre">
-      Identify products often bought together
+  <section class="h-[200px] 2xl:h-[300px] bg-slate-100 flex items-center w-full">
+    <div class="ml-[-100px] bg-slate-300 rounded-xl w-full md:w-[650px] flex items-center p-5">
+      <p class="ml-[150px] text-xl xl:text-2xl 2xl:text-4xl font-bold text-white">
+        Identify products often bought together
      </p>
     </div>
   </section>
 
-<section class="bg-slate-100 lg:h-screen w-full p-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center md:gap-10 gap-16">
+
+  
+
+<section class="bg-slate-100 lg:h-screen w-full lg:px-20 flex flex-col lg:flex-row items-center justify-center md:gap-10 gap-16">
   <app-table
   [firstTitle]="'Products Associations'"
   [secondTitle]="'Total'"
@@ -77,27 +80,85 @@
     'Bag of Organic Bananas +  Organic Hass Avocado',
     'Organic Strawberries + Bag of Organic Bananas',
     'Organic Strawberries + Organic Raspberries',
+    'Organic Strawberries + Banana',
+    'Banana + Organic Strawberries',
+    'Organic Baby Spinach + Bag of Organic Bananas',
+    'Bag of Organic Bananas + Organic Baby Spinach',
+    'Banana + Organic Avocado'
     ]"
-  [numbers]="[24,21,16,14,13]"
+  [numbers]="[241,239,237,222,215,209,209,203,198,197]"
   ></app-table>
 
+  
 <span class="text-4xl md:w-1/2 lg:w-1/3 p-10 xl:px-20 text-center"
 >Which products are frequently purchased together?</span>
 </section>
+
+
+<section class="h-[200px] 2xl:h-[300px] flex items-center justify-end overflow-hidden">
+  <div class="mr-[-100px] overflow-hidden bg-slate-300 rounded-xl w-full md:w-[650px] flex items-center p-5">
+    <p class="mr-[150px] font-bold text-xl xl:text-2xl 2xl:text-4xl  text-white">
+      Analysis of associations between product groups
+    </p>
+  </div>
+  </section>
 
 <section class="lg:h-screen w-full p-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center md:gap-10 gap-16">
   <span class="text-4xl md:w-1/2 lg:w-1/3 p-10 xl:px-20 text-center"
   >Which aisles are frequently associated with each other in customer orders?</span>
       <div class="h-auto w-full md:w-1/2 lg:w-2/3 ">
-        <img src="/img/aisles.png" alt="">
+        <img src="/img/red-aisles.png" alt="">
   </div>
 </section>
 
 
 <section class="lg:h-screen w-full p-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center md:gap-10 gap-16">
       <div class="h-auto w-full md:w-1/2 lg:w-2/3 ">
-        <img src="/img/departments.png" alt="">
+        <img src="/img/red-dpt.png" class="h-4/5 w-auto" alt="">
   </div>
   <span class="text-4xl md:w-1/2 lg:w-1/3 p-10 xl:px-20 text-center"
   >Which departments are frequently associated with each other in customer orders?</span>
+</section>
+
+
+
+
+<section class="h-[200px] 2xl:h-[300px] flex items-center justify-end overflow-hidden">
+  <div class="mr-[-100px] overflow-hidden bg-myrose2 rounded-xl w-full md:w-[650px] flex items-center p-5">
+    <p class="mr-[150px] font-bold text-xl xl:text-2xl 2xl:text-4xl  text-white">
+      Conclusion: Why this data is useful?
+    </p>
+  </div>
+  </section>
+
+<section class="h-screen w-full px-10 lg:px-20 flex flex-col gap-10 text-md 2xl:text-xl">
+  <p class="text-justify px-20 p-10 ">
+    From the analysis of frequent associations between departments and aisles, we can draw the following conclusions:
+  </p>
+<div class="flex items-center justify-center gap-10 2xl:gap-20 w-full">
+  <div class="flex flex-col items-center justify-center h-[700px] w-[450px] p-10 bg-slate-100 rounded-lg shadow-md">
+    <div class="">
+      <img src="/img/time.png" class="h-[80px]" alt="">
+    </div>
+    <p class="font-bold text-center p-10 text-myrose1">Reducing Shopping Time </p>
+    <p class="text-justify">Placing frequently associated aisles, such as "fresh fruits" and "fresh vegetables," close to one another simplifies navigation and significantly reduces shopping time. Customers can quickly locate related products without unnecessary movement across the store. This logical organization eliminates frustration from prolonged searches and creates a more efficient and enjoyable shopping experience, ultimately meeting the needs of time-conscious shoppers.</p>
+  </div>
+
+  <div class="flex flex-col items-center justify-center h-[700px] w-[450px] p-10 bg-slate-100  rounded-lg shadow-md">
+    <div class="">
+      <img src="/img/surconsommation.png" class="h-[80px]" alt="">
+    </div>
+    <p class="font-bold text-center p-10 text-myrose1">Reducing Overconsumption</p>
+    <p class="text-justify">An optimized layout that groups complementary products intuitively helps reduce impulsive purchases of unnecessary items. By guiding customers through well-organized sections, they focus more on their intended purchases rather than wandering through unrelated areas. Additionally, promoting less popular products within these zones through targeted promotions ensures a balanced consumption pattern and minimizes inventory waste, fostering a more thoughtful shopping process.</p>
+  </div>
+
+
+  <div class="flex flex-col items-center justify-center h-[700px] w-[450px] p-10 bg-slate-100  rounded-lg shadow-md">
+    <div class="">
+      <img src="/img/communautes.png" class="h-[80px]" alt="">
+    </div>
+    <p class="font-bold text-center p-10 text-myrose1">Enhancing Customer Well-being and Fidelity</p>
+    <p class="text-justify">An intuitive and seamless shopping experience contributes to customer well-being by reducing stress and improving satisfaction. When customers feel that their needs are met efficiently and thoughtfully, they associate the store with convenience and care. Moreover, efforts to align product placement with customer preferences build trust and foster loyalty, encouraging repeat visits and long-term customer relationships.</p>
+  </div>
+</div>
 </section>

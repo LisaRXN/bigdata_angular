@@ -1,10 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { WindowService } from './services/window.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,8 +15,8 @@ export class AppComponent implements OnInit {
 
   private router = inject(Router)
   private windowService = inject(WindowService)
-  isMenuOpen = false;
-
+  isMenuOpen:boolean = false;
+  endPage:boolean = false;
 
   ngOnInit():void {
     this.router.events.subscribe(event => {
@@ -33,13 +34,33 @@ export class AppComponent implements OnInit {
     const sectionsArray = Array.from(sections);
     const nextSection = sectionsArray.find( section => section.offsetTop > window.scrollY )
     
-    if(nextSection){
+    if(this.endPage){
+      scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    else if(nextSection){
       scrollTo({
         top: nextSection.offsetTop,
         behavior: "smooth",
       });
     }
   }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll() {
+      let positionY = window.scrollY
+      let pageHeight = document.documentElement.scrollHeight;
+      let windowHeight = window.innerHeight
+
+      if(positionY > pageHeight-windowHeight-200){
+        this.endPage = true
+      }else{
+        this.endPage = false
+      }
+    }
+  
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

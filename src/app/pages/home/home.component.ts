@@ -13,9 +13,10 @@ import { CountupComponent } from "../../components/countup/countup.component";
 export class HomeComponent {
 
   router = inject(Router)
+  page:string = "home"
 
-  navigate(){
-    this.router.navigate(['first'])
+  navigate(page:string){
+    this.router.navigate([page])
   }
 
 
