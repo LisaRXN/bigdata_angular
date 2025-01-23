@@ -4,45 +4,20 @@
   </h2>
   <img src="/img/ban-stars.png" class="absolute bottom-0 right-0 h-full opacity-50 p-10" alt="">
 
-  @if(isReady){
-
   <h1 
-    [ngClass]="{
-      'w-1/2':true,
-      'leading-tight': true,
-      'hidden':isHidden,
-      'text-4xl':true,
-      '2xl:text-6xl':true,
-      'font-bold':true,
-      'text-myrose2':true,
-      'translate-x-20': !isVisible,
-      'translate-x-0': isVisible,
-      'transition-all': true,
-      'duration-1000': true,
-      'opacity-0': !isVisible
-    }"
-    >
-     raise awareness of sustainable shopping practices
-    </h1>
-    <h1 
-    [ngClass]="{
-      'max-w-2/3':true,
-      'hidden':isHidden,
-      'leading-tight': true,
-      'text-4xl':true,
-      '2xl:text-6xl':true,
-      'font-bold':true,
-      'text-myrose2':true,
-      'translate-x-20': !isVisible2,
-      'translate-x-0': isVisible2,
-      'transition-all': true,
-      'duration-1000': true,
-      'opacity-0': !isVisible2
-    }"
-    >
-    encourage eco-friendly decisions
-    </h1>
-  }
+  *ngIf="isVisible" [@fadeInOnLoad]
+  [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+  class="leading-tight text-4xl font-bold text-myrose2 w-1/2"
+  >
+  ✓ Raise awareness of sustainable shopping practices
+  </h1>
+  <h1 
+  *ngIf="isVisible" [@fadeInOnLoad2]
+  [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+  class="leading-tight text-4xl font-bold text-myrose2"
+  >
+  ✓ Encourage eco-friendly decisions
+  </h1>
   </div>
   
   
@@ -55,20 +30,28 @@
   </section>
   
   <div class=" bg-slate-100 lg:h-screen w-full p-5 lg:px-20 ">
-    <div class="flex flex-col lg:flex-row w-full h-full items-center  justify-center gap-y-16">
+    <div class="flex flex-col lg:flex-row w-full h-full items-center justify-center gap-y-16">
       <app-bar 
+      class="w-4/5 p-5"
       [chartId]="'barchart5'"
-      [labeldata]="['Customers who prefer to by fresh products', 'Customers who prefer to by packaged products']"
-      [realdata]="[150545, 40207]"
-      [colordata]="['#4f52ff', '#ff928f']"
+      [fileName]="'cluster_counts.csv'"
+      [labelRow]="'Cluster'"
+      [numberRow]="'User Count'"
       [title]="'Customer distribution by cluster'"
+      [colors]="['#4f52ff', '#ff928f']"
+      [limit]="2"
+      [labeldata]="['Cluster 1', 'Cluster 2']"
       ></app-bar>
       <span class="text-4xl w-auto md:w-1/3 p-10 text-center"
         >What is the distribution of customers across clusters?</span
       >
     </div>
+    <div class="flex flex-col gap-2 mt-[-40px]">
+      <div class="flex items-center justify-start gap-2"><span class="bg-mybleu1 w-10 h-5"></span>Cluster n°1 : Customers who prefers to by fresh products</div>
+      <div class="flex items-center justify-start gap-2"><span class="bg-myrose2 w-10 h-5"></span>Cluster n°1 : Customers who prefers to by packaged products</div>
+    </div>
   </div>
-  
+
 
   <section class="h-[200px] 2xl:h-[300px] bg-slate-100 flex items-end w-full">
     <div class="ml-[-100px] bg-slate-300  rounded-xl w-full md:w-[650px] flex items-center p-5">
@@ -93,24 +76,61 @@
           <swiper-slide class="h-3/4">
             <app-doughnut 
             [chartId]="'donut1'"
-            [labeldata]="['Packaged products', 'Fresh products']"
-            [realdata]="[16.1, 83.9]"
-            [colordata]="['#4f52ff', '#ff928f']"
-            [pct]="['16.1%', '83.9%']"
+            [fileName]="'cluster_proportions_cluster_0.csv'"
+            [labelRow]="'products'"
+            [numberRow]="'pourcent'"
+            [pctRow]="'pourcent'"
+            [colors]="['#ff928f', '#4f52ff']"
             [title]="'Cluster n°1 : Customers who prefer to by fresh products'"
             ></app-doughnut>
           </swiper-slide>
-            <swiper-slide >
-              <app-doughnut 
-              [chartId]="'donut2'"
-              [labeldata]="['Packaged products', 'Fresh products']"
-              [realdata]="[62.3, 37.7]"
-              [colordata]="['#4f52ff', '#ff928f']"
-              [pct]="['62.3%', '37.7%']"
-              [title]="'Cluster n°2 : Customers who prefer to by packaged products'"
-              ></app-doughnut>
-            </swiper-slide>
+          <swiper-slide class="h-3/4">
+            <app-doughnut 
+            [chartId]="'donut2'"
+            [fileName]="'cluster_proportions_cluster_1.csv'"
+            [labelRow]="'products'"
+            [numberRow]="'pourcent'"
+            [pctRow]="'pourcent'"
+            [colors]="['#ff928f', '#4f52ff']"
+            [title]="'Cluster n°2 : Customers who prefer to by packaged products'"
+            ></app-doughnut>
+          </swiper-slide>
           </swiper-container>
       </div>
     </div>
+  </section>
+
+
+
+  <section class="h-screen w-full px-10 lg:px-20 flex flex-col gap-10 text-xl">
+    <p class="text-justify px-20 p-10 ">
+      The analysis focuses on predicting the likelihood of product reorders based on user purchase behavior. 
+      By examining past order data, we can estimate the probability of a user repurchasing specific products, enabling more precise stock management. This predictive model uses historical purchase data to anticipate future demand, allowing businesses to tailor their inventory and marketing strategies accordingly.
+    </p>
+  
+  
+    <div class="flex items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg pb-40">
+      <div class="flex flex-col items-center justify-center h-[600px] w-[400px] p-10 bg-slate-100 rounded-lg shadow-md">
+        <div class="">
+          <img src="/img/ecologic.png" class="h-[80px]" alt="">
+        </div>
+        <p class="font-bold text-center p-10 text-myrose1">Raising Awareness</p>
+        <!-- <p class=" text-justify ">
+          The analysis reveals distinct consumer behaviors that can be used to raise awareness about sustainable shopping. Businesses can target Cluster 1, which prefers packaged products, with educational campaigns emphasizing the environmental impact of packaging and promoting the benefits of reducing waste. By sharing relevant information and data, this group can be made more aware of the importance of sustainable choices, encouraging them to adopt more responsible shopping habits. 
+        </p> -->
+        <p class=" text-justify ">
+          The analysis highlights distinct behaviors that can raise awareness about sustainable shopping. Businesses can target Cluster 1, which prefers packaged products, with educational campaigns on the environmental impact of packaging and waste reduction. Sharing relevant information can encourage this group to adopt more responsible habits.        </p>
+      </div>
+  
+      <div class="flex flex-col items-center justify-center h-[600px] w-[400px] p-10 bg-slate-100  rounded-lg shadow-md">
+        <div class="">
+          <img src="/img/no-plastic.png" class="h-[80px]" alt="">
+        </div>
+        <p class="font-bold text-center p-10 text-myrose1">Encouraging Eco-Friendly Purchasing</p>
+        <!-- <p class=" text-justify ">
+        To encourage eco-friendly behaviors, businesses can target Cluster 1, which prefers packaged products, with practical incentives like discounts or rewards for choosing fresh, packaging-free alternatives. Visibility and accessibility of eco-friendly products can also be improved through better store layouts and promotions. These strategies can gradually shift purchasing habits, promoting sustainability while meeting customer needs.        </p> -->
+        <p class=" text-justify ">
+          To encourage eco-friendly behaviors, businesses can target Cluster 1 with incentives like discounts for choosing fresh, packaging-free products. Improving the visibility and accessibility of eco-friendly options through store layouts and promotions can also help shift purchasing habits toward more sustainable choices      </div>
+  </div>
+  
   </section>

@@ -1,1 +1,17 @@
-<canvas class="w-full h-[500px] max-h-[700px]" [id]="chartId"></canvas>
+<div class="flex flex-col gap-5 w-full items-center justify-center">
+<canvas class=" h-[500px] max-h-[700px]" [id]="chartId"></canvas>
+@if(checkbox){
+
+    <div class="flex gap-4 ">
+        <div class="flex gap-2">
+            <input type="checkbox" name="10" (change)="onChangeBox($event)" [checked]="true">
+            <label for="10">10 results</label>
+        </div>
+        <div class="flex gap-2">
+            <input type="checkbox" name="25" (change)="onChangeBox($event)">
+            <label for="25">25 results</label>
+        </div>
+    </div>
+}
+
+</div>

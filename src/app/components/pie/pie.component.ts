@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { Chart, registerables, ChartType } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { CsvTojsonService } from '../../services/csv-tojson.service';
 
 Chart.register(...registerables, ChartDataLabels);
 
@@ -10,39 +11,69 @@ Chart.register(...registerables, ChartDataLabels);
   templateUrl: './pie.component.html',
   styleUrl: './pie.component.css'
 })
-export class PieComponent implements AfterViewInit  {
+export class PieComponent implements AfterViewInit, OnInit {
 
   chart!: Chart;
 
+  labeldata:string[] = []
+  realdata:number[] = []
+  pct:string[] = []
+  colordata:string[] = []
   @Input() chartId:string = ''
-  @Input() labeldata:string[] = []
-  @Input() realdata:number[] = []
-  @Input() colordata:string[] = []
-  @Input() pct:string[] = []
+  // @Input() colors:string[] = ['#4f52ff', '#8c5ce9', '#b268d3', '#cf75bd', '#e983a7', '#68c7cc', '#96cbce', '#bbcecf', '#ddd1d1', '#fcd3d2']
+  @Input() colors:string[] = ['#0015b3', '#3940e0', '#6e68ff', '#a695ff', '#d4c3fc', '#fdb8b5', '#e28684', '#bd5858', '#922e37', '#640114']
   @Input() title:string = ""
+  @Input() fileName:string = ""
+  @Input() labelRow:string = ""
+  @Input() numberRow:string = ""
+  @Input() pctRow:string = ""
 
+    csvService = inject(CsvTojsonService)
+  
+    ngOnInit(): void {
+      if(this.fileName){
+        this.csvService.getDatas(this.fileName).subscribe( 
+          (data) => {
+            this.setDatas(data)
+          }
+        )
+      }
+    }
+
+    setDatas(data:any[]){
+      this.labeldata = data.map( (row => row[this.labelRow]))
+      this.pct = data.map( (row => row[this.pctRow]))
+      this.realdata = data.map( (row => parseInt(row[this.numberRow])))
+      this.colordata = data.map( (_, index) => this.colors[index % this.colors.length])
+    }
 
   ngAfterViewInit(): void {
+
+    if (this.chart) {
+      this.chart.destroy(); 
+    }
     if (typeof document !== 'undefined' && this.chartId) {
       this.Renderchart(this.labeldata, this.realdata, this.colordata, this.pct);
     }
   }
 
+
   Renderchart(labels: string[], data: number[], colors: string[], pct:string[]): void {
-    const ctx = document.getElementById(this.chartId) as HTMLCanvasElement;
 
     if (this.chart) {
       this.chart.destroy(); 
     }
+    
+    const ctx = document.getElementById(this.chartId) as HTMLCanvasElement;
+
 
     this.chart = new Chart(ctx, {
-      type: 'pie',  // Changez ici en 'pie' pour le graphique en camembert
+      type: 'pie',  
       data: {
         labels: labels,
         datasets: [{
           data: data,
           backgroundColor: colors,
-          label: 'Sales'
         }],
       },
       options: {
@@ -79,4 +110,9 @@ export class PieComponent implements AfterViewInit  {
     });
   }
 
+  ngOnDestroy(): void {
+    if (this.chart) {
+      this.chart.destroy();
+    }
+  }
 }

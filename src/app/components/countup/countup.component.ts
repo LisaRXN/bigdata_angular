@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-countup',
@@ -19,6 +19,7 @@ export class CountupComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.startCountUp();
   }
+  
 
   startCountUp() {
 

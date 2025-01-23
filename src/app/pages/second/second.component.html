@@ -3,59 +3,29 @@
     How can we optimize the store layout through purchase associations to:</h2>
   <img src="/img/ban-decision.png" class="absolute bottom-0 right-0 xl:h-full h-3/4 object-contain opacity-50 p-10" alt="">
   
-  @if(isReady){  
+
   <h1 
-    [ngClass]="{
-      'leading-tight': true,
-      'hidden':isHidden,
-      'text-4xl':true,
-      '2xl:text-6xl':true,
-      'font-bold':true,
-      'text-myrose2':true,
-      'translate-x-20': !isVisible,
-      'translate-x-0': isVisible,
-      'transition-all': true,
-      'duration-1000': true,
-      'opacity-0': !isVisible
-    }"
-    >
-    ✓ Minimize customer shopping time
-    </h1>
-    <h1 
-    [ngClass]="{
-      'hidden':isHidden,
-      'leading-tight': true,
-      'text-4xl':true,
-      '2xl:text-6xl':true,
-      'font-bold':true,
-      'text-myrose2':true,
-      'translate-x-20': !isVisible2,
-      'translate-x-0': isVisible2,
-      'transition-all': true,
-      'duration-1000': true,
-      'opacity-0': !isVisible2
-    }"
-    >
-    ✓ Reduce overconsumption
-    </h1>
-    <h1 
-    [ngClass]="{
-      'hidden':isHidden,
-      'leading-tight': true,
-      'text-4xl':true,
-      '2xl:text-6xl':true,
-      'font-bold':true,
-      'text-myrose2':true,
-      'translate-x-20': !isVisible3,
-      'translate-x-0': isVisible3,
-      'transition-all': true,
-      'duration-1000': true,
-      'opacity-0': !isVisible3
-    }"
-    >
-    ✓ Increase customer well-being
-    </h1>
-  }
+  *ngIf="isVisible" [@fadeInOnLoad]
+  [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+  class="leading-tight text-4xl font-bold text-myrose2"
+  >
+  ✓ Minimize customer shopping time
+  </h1>
+  <h1 
+  *ngIf="isVisible" [@fadeInOnLoad2]
+  [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+  class="leading-tight text-4xl font-bold text-myrose2"
+  >
+  ✓ Reduce overconsumption
+  </h1>
+  <h1 
+  *ngIf="isVisible" [@fadeInOnLoad3]
+  [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+  class="leading-tight text-4xl font-bold text-myrose2"
+  >
+  ✓ Increase customer well-being
+  </h1>
+
   </div>
 
 
@@ -135,7 +105,8 @@
   <p class="text-justify px-20 p-10 ">
     From the analysis of frequent associations between departments and aisles, we can draw the following conclusions:
   </p>
-<div class="flex items-center justify-center gap-10 2xl:gap-20 w-full">
+
+<div class="flex items-center justify-center gap-10 2xl:gap-20 w-full pb-40">
   <div class="flex flex-col items-center justify-center h-[700px] w-[450px] p-10 bg-slate-100 rounded-lg shadow-md">
     <div class="">
       <img src="/img/time.png" class="h-[80px]" alt="">

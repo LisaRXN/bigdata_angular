@@ -25,6 +25,6 @@ export const routes: Routes = [
      {
         path: 'third',
         component: ThirdComponent,
-      },
+      }
 
 ];
