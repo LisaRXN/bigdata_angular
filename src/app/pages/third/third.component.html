@@ -1,4 +1,4 @@
-<div class="relative p-10 2xl:p-20 h-screen w-full bg-mybleu1 flex flex-col gap-10 overflow-hidden">
+<!-- <div class="relative p-10 2xl:p-20 h-screen w-full bg-mybleu1 flex flex-col gap-10 overflow-hidden">
   <h2 class="text-4xl 2xl:text-6xl leading-snug 2xl:leading-normal w-2/3 2xl:w-1/2 text-slate-100 font-bold">   
     How can we use customer segmentation based on purchasing behavior to:
   </h2>
@@ -18,10 +18,32 @@
   >
   ✓ Encourage eco-friendly decisions
   </h1>
+  </div> -->
+
+
+  <div class="p-10 2xl:p-20 h-screen w-full bg-mygreen flex gap-10 overflow-hidden">
+    <div class="w-1/2 p-20">
+        @if(isVisible){
+          <h1 
+          *ngIf="isVisible" [@fadeInOnLoad]
+          [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
+          class="leading-tight 2xl:leading-snug text-6xl 2xl:text-8xl font-bold text-slate-100"
+          >
+          Use customer segmentation to
+           <span class="text-myyellow">encourage eco-friendly decisions</span>
+          </h1>
+        }
+    </div>
+    <div class="w-1/2 h-full">
+      <img src="/img/ecology2.png" class="w-full h-full object-contain p-10" alt="">
+    </div>
   </div>
   
   
-  <section class="h-[200px] 2xl:h-[300px] bg-slate-100 flex items-end w-full">
+  <section class="h-[400px] bg-slate-100 flex flex-col justify-center gap-10 w-full">
+    <p class="text-xl font-bold text-slate-600 p-10 px-20">
+      How can we use customer segmentation based on purchasing behavior to raise awareness of sustainable shopping practices and encourage eco-friendly decisions?
+    </p>
     <div class="ml-[-100px] bg-slate-300 rounded-xl w-full md:w-[650px] flex items-center p-5">
       <p class="ml-[150px] text-xl xl:text-2xl 2xl:text-4xl font-bold text-white">
       Identifying two clusters of customers
@@ -38,7 +60,7 @@
       [labelRow]="'Cluster'"
       [numberRow]="'User Count'"
       [title]="'Customer distribution by cluster'"
-      [colors]="['#4f52ff', '#ff928f']"
+      [colors]="['#469f78', '#ea8383']"
       [limit]="2"
       [labeldata]="['Cluster 1', 'Cluster 2']"
       ></app-bar>
@@ -47,8 +69,8 @@
       >
     </div>
     <div class="flex flex-col gap-2 mt-[-40px]">
-      <div class="flex items-center justify-start gap-2"><span class="bg-mybleu1 w-10 h-5"></span>Cluster n°1 : Customers who prefers to by fresh products</div>
-      <div class="flex items-center justify-start gap-2"><span class="bg-myrose2 w-10 h-5"></span>Cluster n°1 : Customers who prefers to by packaged products</div>
+      <div class="flex items-center justify-start gap-2"><span class="bg-mygreen w-10 h-5"></span>Cluster n°1 : Customers who prefers to by fresh products</div>
+      <div class="flex items-center justify-start gap-2"><span class="bg-mypink w-10 h-5"></span>Cluster n°1 : Customers who prefers to by packaged products</div>
     </div>
   </div>
 
@@ -80,7 +102,7 @@
             [labelRow]="'products'"
             [numberRow]="'pourcent'"
             [pctRow]="'pourcent'"
-            [colors]="['#ff928f', '#4f52ff']"
+            [colors]="['#ea8383', '#469f78']"
             [title]="'Cluster n°1 : Customers who prefer to by fresh products'"
             ></app-doughnut>
           </swiper-slide>
@@ -91,7 +113,7 @@
             [labelRow]="'products'"
             [numberRow]="'pourcent'"
             [pctRow]="'pourcent'"
-            [colors]="['#ff928f', '#4f52ff']"
+            [colors]="['#ea8383', '#469f78']"
             [title]="'Cluster n°2 : Customers who prefer to by packaged products'"
             ></app-doughnut>
           </swiper-slide>
@@ -102,35 +124,42 @@
 
 
 
+  <section class="h-[200px] 2xl:h-[300px] flex items-center justify-end overflow-hidden">
+    <div class="mr-[-100px] overflow-hidden bg-mygreen rounded-xl w-full md:w-[650px] flex items-center p-5">
+      <p class="mr-[150px] font-bold text-xl xl:text-2xl 2xl:text-4xl  text-white">
+        Conclusion: Why this data is useful?
+      </p>
+    </div>
+    </section>  
+
+
   <section class="h-screen w-full px-10 lg:px-20 flex flex-col gap-10 text-xl">
-    <p class="text-justify px-20 p-10 ">
-      The analysis focuses on predicting the likelihood of product reorders based on user purchase behavior. 
-      By examining past order data, we can estimate the probability of a user repurchasing specific products, enabling more precise stock management. This predictive model uses historical purchase data to anticipate future demand, allowing businesses to tailor their inventory and marketing strategies accordingly.
+    <p class="text-justify text-xl font-bold text-slate-600 p-10 px-20">
+      The analysis focuses on predicting the likelihood of product reorders based on user purchase behavior. By examining past order data, we can estimate the probability of a user repurchasing specific products, enabling more precise stock management. This predictive model uses historical purchase data to anticipate future demand, allowing businesses to tailor their inventory and marketing strategies accordingly.
     </p>
   
-  
-    <div class="flex items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg pb-40">
-      <div class="flex flex-col items-center justify-center h-[600px] w-[400px] p-10 bg-slate-100 rounded-lg shadow-md">
+    <div class="flex items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40 px-20">
+      
+      <div class="flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
         <div class="">
-          <img src="/img/ecologic.png" class="h-[80px]" alt="">
+          <img src="/img/brain.png" class="h-[150px]" alt="">
         </div>
-        <p class="font-bold text-center p-10 text-myrose1">Raising Awareness</p>
-        <!-- <p class=" text-justify ">
-          The analysis reveals distinct consumer behaviors that can be used to raise awareness about sustainable shopping. Businesses can target Cluster 1, which prefers packaged products, with educational campaigns emphasizing the environmental impact of packaging and promoting the benefits of reducing waste. By sharing relevant information and data, this group can be made more aware of the importance of sustainable choices, encouraging them to adopt more responsible shopping habits. 
-        </p> -->
+        <p class="font-bold text-center p-10 text-mygreen">Raising Awareness</p>
         <p class=" text-justify ">
-          The analysis highlights distinct behaviors that can raise awareness about sustainable shopping. Businesses can target Cluster 1, which prefers packaged products, with educational campaigns on the environmental impact of packaging and waste reduction. Sharing relevant information can encourage this group to adopt more responsible habits.        </p>
+          The analysis highlights distinct behaviors that can raise awareness about sustainable shopping. Businesses can target Cluster 1, which prefers packaged products, with educational campaigns on the environmental impact of packaging and waste reduction. Sharing relevant information can encourage this group to adopt more responsible habits.        
+        </p>
       </div>
   
-      <div class="flex flex-col items-center justify-center h-[600px] w-[400px] p-10 bg-slate-100  rounded-lg shadow-md">
+      <div class="flex flex-1  flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100  rounded-lg shadow-md">
         <div class="">
-          <img src="/img/no-plastic.png" class="h-[80px]" alt="">
+          <img src="/img/recycling.png" class="h-[150px]" alt="">
         </div>
-        <p class="font-bold text-center p-10 text-myrose1">Encouraging Eco-Friendly Purchasing</p>
-        <!-- <p class=" text-justify ">
-        To encourage eco-friendly behaviors, businesses can target Cluster 1, which prefers packaged products, with practical incentives like discounts or rewards for choosing fresh, packaging-free alternatives. Visibility and accessibility of eco-friendly products can also be improved through better store layouts and promotions. These strategies can gradually shift purchasing habits, promoting sustainability while meeting customer needs.        </p> -->
+        <p class="font-bold text-center p-10 text-mygreen">Encouraging Eco-Friendly Purchasing</p>
         <p class=" text-justify ">
-          To encourage eco-friendly behaviors, businesses can target Cluster 1 with incentives like discounts for choosing fresh, packaging-free products. Improving the visibility and accessibility of eco-friendly options through store layouts and promotions can also help shift purchasing habits toward more sustainable choices      </div>
+          To encourage eco-friendly behaviors, businesses can target Cluster 1 with incentives like discounts for choosing fresh, packaging-free products. Improving the visibility and accessibility of eco-friendly options through store layouts and promotions can also help shift purchasing habits toward more sustainable choices      
+        </p>
+      </div>
+
   </div>
   
   </section>

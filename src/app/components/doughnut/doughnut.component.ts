@@ -34,6 +34,7 @@ export class DoughnutComponent implements AfterViewInit, OnInit {
         this.csvService.getDatas(this.fileName).subscribe( 
           (data) => {
             this.setDatas(data)
+            this.Renderchart(this.labeldata, this.realdata, this.colordata, this.pct);
           }
         )
       }
@@ -43,9 +44,7 @@ export class DoughnutComponent implements AfterViewInit, OnInit {
     if (this.chart) {
       this.chart.destroy(); 
     }
-    if (typeof document !== 'undefined' && this.chartId) {
-      this.Renderchart(this.labeldata, this.realdata, this.colordata, this.pct);
-    }
+
   }
 
 

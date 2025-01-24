@@ -38,7 +38,6 @@ import { After } from 'v8';
 export class FirstComponent implements AfterViewInit, OnInit {
   
   isVisible = false;
-    private viewChecked = false; // Indicateur pour éviter des changements multiples
   
   ngOnInit(): void {
     this.isVisible = false;
