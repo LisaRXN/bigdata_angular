@@ -22,7 +22,7 @@ export class CsvTojsonService {
 
     getDatas(fileName: string): Observable<any[]> {
       return this.http
-      .get('http://localhost:4200/csv/' + fileName, { responseType: 'text' as 'json' })
+      .get('/csv/' + fileName, { responseType: 'text' as 'json' })
       .pipe(
         tap( (results: any) => {
           const parsedData = Papa.parse(results, {
