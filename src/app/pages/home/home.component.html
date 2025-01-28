@@ -1,15 +1,15 @@
-<div class="p-10 md:p-20 h-screen w-full bg-mygreen flex flex-col gap-16">
+<div class="p-10 lg:p-20 h-screen w-full bg-mygreen flex flex-col gap-16">
   <div class="min-h-1/4">
-    <h1 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-white">
+    <h1 class="text-6xl md:text-8xl font-grotesk font-extrabold text-white">
       Data Analyse
     </h1>
-    <h1 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-myyellow">
+    <h1 class="text-6xl md:text-8xl font-grotesk font-extrabold text-myyellow">
       Project
     </h1>
   </div>
 
   <div
-    class="hidden md:visible md:flex items-center justify-center gap-32 lg:gap-44 2xl:gap-56 flex-1"
+    class="h-3/4 hidden md:visible md:flex items-center justify-center gap-32 lg:gap-44 2xl:gap-56 flex-1"
   >
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
       <img src="/img/client3.png" class="object-cover h-24 2xl:h-40" alt="" />
@@ -58,7 +58,7 @@
   </div>
 </section>
 
-<section class="p-10 md:p-20 h-auto w-full bg-mygreen flex flex-col gap-16">
+<section class="h-auto lg:h-screen p-10 lg:p-20 w-full bg-mygreen flex flex-col gap-16">
   <div>
     <h3 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-white">
       Some
@@ -69,7 +69,7 @@
   </div>
 
   <div
-    class="flex flex-col md:flex-row items-center justify-center gap-20 md:gap-32 lg:gap-44 2xl:gap-56 flex-1 py-10"
+    class="flex flex-col lg:flex-row items-center justify-center gap-20 md:gap-20 lg:gap-44 2xl:gap-56 flex-1 py-10"
   >
     <app-home-number
       backgroundColor="mypink"
@@ -96,15 +96,15 @@
 
 <section
   id="question"
-  class="flex flex-col items-start justify-center h-auto w-full gap-5 md:gap-20 bg-mygreen p-5 lg:p-20 pb-40"
+  class="flex flex-col h-auto lg:min-h-screen bg-mygreen items-center justify-center w-full gap-32 lg:gap-52 p-5 md:p-20"
 >
   <p
     [ngClass]="{
       'text-2xl ': true,
-      'lg:text-4xl ': true,
+      'lg:text-6xl ': true,
+      'lg:leading-snug': true,
       'font-bold': true,
       'text-slate-100': true,
-      'pb-20': true,
       'transition-all': true,
       'duration-1000': true,
       transform: true,
@@ -120,7 +120,7 @@
   </p>
 
   <div
-    class="relative flex flex-col md:flex-row items-center justify-around gap-y-36 2xl:px-20 w-full gap-8"
+    class="relative flex flex-col lg:flex-row items-center justify-around gap-28 lg:gap-8 w-full"
   >
     <app-card-menu
       class="w-full lg:w-1/3"

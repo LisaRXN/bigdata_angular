@@ -34,7 +34,7 @@ export class HomeComponent {
 
     if(element){
       const elementY = element.offsetTop - windowHeight
-      this.isVisible = window.scrollY > elementY - 100;
+      this.isVisible = window.scrollY > elementY - 50;
     }
 
 
