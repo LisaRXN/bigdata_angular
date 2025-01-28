@@ -1,30 +1,29 @@
-<div class="p-10 2xl:p-20 h-screen w-full bg-mygreen flex gap-10 overflow-hidden">
-  <div class="w-1/2 p-20">
-
+<div class="p-10 2xl:p-20 h-screen w-full bg-mygreen flex flex-col lg:flex-row gap-10 overflow-hidden">
+  <div class="w-full lg:w-1/2 lg:p-20">
       @if(isVisible){
         <h1 
         *ngIf="isVisible" [@fadeInOnLoad]
         [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
-        class="leading-tight 2xl:leading-snug text-6xl 2xl:text-8xl font-bold text-slate-100"
+        class="leading-tight 2xl:leading-snug text-4xl lg:text-6xl 2xl:text-8xl font-bold text-slate-100"
         >
         Optimized stock management to
          <span class="text-myyellow">reduce waste</span>
         </h1>
       }
   </div>
-  <div class="w-1/2 h-full">
-    <img src="/img/waste1.png" class="w-full h-full object-contain p-10"  alt="">
+  <div class="w-full lg:w-1/2 h-full">
+    <img src="/img/waste1.png" class="w-full h-full object-cover lg:objet-contain lg:p-10"  alt="">
   </div>
 </div>
 
 
-<section class="h-[400px] bg-slate-100 flex flex-col justify-center gap-10 w-full">
+<section class="h-auto lg:h-[400px] bg-slate-100 flex flex-col justify-center gap-10 w-full py-10">
 
-<p class="text-xl font-bold text-slate-600 p-10 px-20">
+<p class="text-xl font-bold text-slate-600 px-10 lg:p-20 ">
   How can we optimized stock management and predict the products that will be popular in the future to better manage inventory, avoid stockouts and reduce waste?
 </p>
 
-  <div class="ml-[-100px] bg-slate-300 rounded-xl w-full md:w-[650px] flex items-center p-5">
+  <div class="ml-[-100px] bg-slate-300  rounded-xl w-full md:w-[650px] flex items-center p-5">
     <p class="ml-[150px] text-xl xl:text-2xl 2xl:text-4xl font-bold text-white">
     Identifying the most ordered and reordered reoproducts
    </p>
@@ -34,7 +33,7 @@
 <div class=" bg-slate-100 lg:h-screen w-full p-5 lg:px-20 ">
   <div class="flex flex-col lg:flex-row w-full h-full items-center  justify-center gap-y-16">
     <app-bar 
-    class="w-4/5 p-10"
+    class="w-full lg:w-4/5 lg:p-10"
     [chartId]="'barchart1'"
     [fileName]="'top_reordered_products.csv'"
     [labelRow]="'product_name'"
@@ -42,26 +41,26 @@
     [title]="'Top 10 of reordered products'"
     [checkbox]="true"
     ></app-bar>
-    <span class="text-4xl w-auto md:w-1/3 p-10 text-center"
-    >What are the most reordered products?</span
-  >
+    <span class="text-4xl w-1/2 lg:w-1/3 p-10 text-center"
+    >What are the most reordered products?</span>
+  
   </div>
 </div>
 
-<section class="lg:h-screen w-full p-10 lg:px-20">
-  <div class="flex flex-col lg:flex-row w-full items-center justify-center h-full gap-5">
-    <span class="text-4xl md:w-1/2 p-10 2xl:px-40 text-center"
+<section class="lg:h-screen w-full p-5 lg:px-20">
+  <div class="flex flex-col lg:flex-row w-full items-center justify-center h-full gap-10">
+    <span class="text-4xl w-full lg:w-1/3 p-10 text-center"
       >What are the departments and aisles generating the most orders per
       year?</span>
-      <div class="h-full w-full md:w-1/2 ">
+      <div class="h-full w-full p-10 lg:p-0 lg:w-1/2">
         <swiper-container 
         pagination="true" 
         pagination-clickable="true"
-        class="h-full "
-        >
-          <swiper-slide class="h-full flex items-center justify-center">
+        class="h-full w-full">
+        
+          <swiper-slide class="h-auto w-full flex items-center justify-center">
             <app-pie 
-            class="h-4/5 p-10"
+            class="w-full 2xl:w-4/5 lg:p-10"
             [chartId]="'piechart1'"
             [fileName]="'top_departments.csv'"
             [labelRow]="'department'"
@@ -70,9 +69,9 @@
             [title]="'Top 5 departments'"
             ></app-pie>
           </swiper-slide>
-          <swiper-slide class="h-full flex items-center justify-center">
+          <swiper-slide class="h-auto w-full flex items-center justify-center">
             <app-pie 
-            class="h-4/5"
+            class="w-full 2xl:w-4/5 lg:p-10"
             [chartId]="'piechart2'"
             [fileName]="'top_aisles.csv'"
             [labelRow]="'aisle'"
@@ -100,7 +99,7 @@
 
   <div class="lg:h-screen bg-slate-100 w-full p-5 lg:px-20">
     <div class="flex flex-col lg:flex-row w-full items-center justify-center h-full gap-16 md:gap-10">
-    <div class="h-full w-full md:w-2/3 ">
+    <div class="h-full w-full lg:w-2/3 ">
     <swiper-container 
     pagination="true" 
     pagination-clickable="true"
@@ -108,7 +107,7 @@
     >
       <swiper-slide class="flex items-center justify-center">
         <app-line 
-        class="p-20"
+        class="w-full lg:h-4/5 lg:p-10"
         [chartId]="'linechart1'"
         [title] = "'Number of regular and unique customers'"
         [fileName] = "'visitors_week.csv'"
@@ -119,7 +118,7 @@
       </swiper-slide>
       <swiper-slide class="flex items-center justify-center">
         <app-bar 
-        class="w-3/4"
+        class="w-full lg:w-4/5 pb-10"
         [chartId]="'barchart2'"
         [fileName]="'orders_dayly.csv'"
         [labelRow]="'day_name'"
@@ -129,7 +128,7 @@
       </swiper-slide>
       <swiper-slide class="flex items-center justify-center">
         <app-bar 
-        class="w-3/4"
+        class="w-full lg:h-4/5"
         [chartId]="'barchart3'"
         [fileName]="'orders_hourly.csv'"
         [labelRow]="'order_hour_of_day'"
@@ -140,7 +139,7 @@
       </swiper-slide>
     </swiper-container>
 </div>
-<span class="text-4xl md:w-1/2 p-10 2xl:px-20 text-center"
+    <span class="text-4xl w-full lg:w-1/3 p-10 text-center"
 >What is the total number of visitors and the number of visitors per week?</span
     >
   </div>
@@ -148,15 +147,15 @@
 
 
 <section class="lg:h-screen w-full p-10 lg:px-20 flex flex-col lg:flex-row items-center justify-center md:gap-10 gap-16">
-  <span class="text-4xl md:w-1/2 lg:w-1/3 p-10 xl:px-20 text-center"
-  >Correlation between the day of the week and the departments of the most ordered products?</span>
+  <span class="text-4xl w-full lg:w-1/3 p-10 2xl:px-20 text-center"
+  >Correlation between the day of the week and the top departments?</span>
       <div class="h-full w-full lg:w-2/3 m-auto">
         <swiper-container
         pagination="true" 
         pagination-clickable="true"
         class= "h-full"
         >
-          <swiper-slide class="flex items-center justify-center"><img class="h-auto w-full block object-contain p-32" src="/img/heat_days.png" alt=""></swiper-slide>
+          <swiper-slide class="flex items-center justify-center"><img class="h-auto w-full block object-contain pb-10 2xl:p-32" src="/img/heat_days.png" alt=""></swiper-slide>
           <swiper-slide class="flex items-center justify-center"><img class="w-full block object-contain" src="/img/heat_hours.png" alt=""></swiper-slide>
         </swiper-container>
   </div>
@@ -173,11 +172,11 @@
 
 <section class="lg:h-screen w-full p-10 lg:px-20 bg-slate-100">
   <div class="flex flex-col lg:flex-row w-full items-center justify-center h-full gap-5">
-    <span class="text-4xl md:w-1/2 p-10 2xl:px-40 text-center"
+    <span class="text-4xl w-full lg:w-1/3 p-10 2xl:px-40 text-center"
       >Can we predict the future order of a customer?</span>
-      <div class="w-auto h-[500px] m-auto md:w-1/2">
+      <div class="flex-1 flex items-center justify-center h-full w-full p-10">
             <app-pie 
-            class="h-[500px]"
+            class="w-full p-10 2xl:p-40"
             [chartId]="'piechart3'"
             [fileName]="'reorder_probs.csv'"
             [labelRow]="'product_name'"
@@ -199,14 +198,16 @@
   </section>
 
 
-<section class="h-screen w-full px-10 lg:px-20 flex flex-col gap-10 text-xl">
-  <p class="text-justify text-xl font-bold text-slate-600 p-10 px-20">
-    The analysis focuses on predicting the likelihood of product reorders based on user purchase behavior. 
+  <section class="h-screen w-full px-10 lg:px-20 flex flex-col gap-10 text-xl">
+    
+    <p class="text-justify text-xl font-bold text-slate-600 p-10 lg:px-20">
+      The analysis focuses on predicting the likelihood of product reorders based on user purchase behavior. 
     By examining past order data, we can estimate the probability of a user repurchasing specific products, enabling more precise stock management. This predictive model uses historical purchase data to anticipate future demand, allowing businesses to tailor their inventory and marketing strategies accordingly.
   </p>
 
-  <div class="flex items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40">
-    <div class="flex flex-col items-center justify-center h-[500px] w-[400px] p-10 bg-slate-100 rounded-lg shadow-md">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40">
+    
+    <div class="flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
       <div class="">
         <img src="/img/stock3.png" class="h-[150px]" alt="">
       </div>
@@ -214,7 +215,7 @@
       <p class=" text-justify ">By forecasting which products are likely to be reordered, businesses can adjust their stock levels to meet expected demand, minimizing both shortages and excess inventory.</p>
     </div>
 
-    <div class="flex flex-col items-center justify-center h-[500px] w-[400px] p-10 bg-slate-100  rounded-lg shadow-md">
+    <div class="flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
       <div class="">
         <img src="/img/ecology.png" class="h-[150px]" alt="">
       </div>

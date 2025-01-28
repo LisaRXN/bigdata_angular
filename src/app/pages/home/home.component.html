@@ -1,12 +1,16 @@
-<div class="p-20 h-screen w-full bg-mygreen flex flex-col gap-16">
-  <div class="h-1/4">
-    <h1 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-white">Data Analyse</h1>
-    <h1 class="text-6xl lg:text-8xl  font-grotesk font-extrabold text-myyellow">Project</h1>
+<div class="p-10 md:p-20 h-screen w-full bg-mygreen flex flex-col gap-16">
+  <div class="min-h-1/4">
+    <h1 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-white">
+      Data Analyse
+    </h1>
+    <h1 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-myyellow">
+      Project
+    </h1>
   </div>
 
-
-  <!-- <img src="/img/chart2.png" class=""> -->
-  <div class="flex items-center justify-center gap-32 lg:gap-44 2xl:gap-56 h-3/4">
+  <div
+    class="hidden md:visible md:flex items-center justify-center gap-32 lg:gap-44 2xl:gap-56 flex-1"
+  >
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
       <img src="/img/client3.png" class="object-cover h-24 2xl:h-40" alt="" />
       <span class="text-2xl text-white text-center font-grotesk">
@@ -14,8 +18,8 @@
           [startValue]="0"
           [endValue]="206209"
           [duration]="1"
-        ></app-countup>   
-        <p class="p-2">Customers</p>     
+        ></app-countup>
+        <p class="p-2">Customers</p>
       </span>
     </div>
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
@@ -26,7 +30,7 @@
           [endValue]="9426431"
           [duration]="2"
         ></app-countup>
-        <p class="p-2">Purchases</p>     
+        <p class="p-2">Purchases</p>
       </span>
     </div>
     <div class="flex flex-col items-center justify-center gap-5 w-[150px]">
@@ -37,54 +41,119 @@
           [endValue]="1"
           [duration]="1"
         ></app-countup>
-        <p class="p-2">Store</p>     
+        <p class="p-2">Store</p>
       </span>
     </div>
   </div>
 </div>
 
-
-<section class="flex w-full items-center justify-start h-screen p-20 gap-10">
-  <div class="flex-1 w-1/2 2xl:p-40"><app-title-big></app-title-big></div>
-  <div class="flex-1 h-4/5"><img class="h-full w-full object-contain" src="/img/client1.png" alt="" /></div>
-
+<section
+  class="flex flex-col md:flex-row w-full items-center justify-start h-screen p-5 md:p-20 gap-10 pb-40"
+>
+  <div class="flex-1 w-full md:w-1/2 2xl:p-40">
+    <app-title-big></app-title-big>
+  </div>
+  <div class="flex-1 h-4/5">
+    <img class="h-full w-full object-contain" src="/img/client1.png" alt="" />
+  </div>
 </section>
 
-
-<section class=" flex flex-col items-center justify-center h-screen w-full gap-20 bg-slate-100 p-20">
-
-<p class="text-xl font-bold text-slate-600">
-  How can data analysis be leveraged to reduce the store's <span class="text-mygreen text-2xl">ecological impact</span> while enhancing customer well-being?
-</p>
-
-
-<div class="flex items-center justify-center gap-10 xl:gap-20 h-3/4 w-full 2xl:px-20">
-  <div class="flex-1 h-full w-1/3">
-    <app-card-home
-      (click)="navigate('first')"
-      image="/img/recycling2.png"
-      title="Optimized stock management to reduce waste"
-      [number]="1"
-    ></app-card-home>
+<section class="p-10 md:p-20 h-auto w-full bg-mygreen flex flex-col gap-16">
+  <div>
+    <h3 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-white">
+      Some
+    </h3>
+    <h3 class="text-6xl lg:text-8xl font-grotesk font-extrabold text-myyellow">
+      Numbers
+    </h3>
   </div>
 
-  <div class="flex-1 h-full w-1/3">
-    <app-card-home
-    (click)="navigate('second')"
+  <div
+    class="flex flex-col md:flex-row items-center justify-center gap-20 md:gap-32 lg:gap-44 2xl:gap-56 flex-1 py-10"
+  >
+    <app-home-number
+      backgroundColor="mypink"
+      numberColor="slate-100"
+      number="4,3 millions tons"
+      text="Of edible food wasted each year"
+    ></app-home-number>
+
+    <app-home-number
+      backgroundColor="myyellow"
+      numberColor="slate-100"
+      number="633 000 tons"
+      text="Of edible food wasted by stores"
+    ></app-home-number>
+
+    <app-home-number
+      backgroundColor="slate-100"
+      numberColor="slate-700"
+      number="2,4 millions tons"
+      text="Of plastic wastes and 13,7% recycled"
+    ></app-home-number>
+
+  </div>
+</section>
+
+<section
+  id="question"
+  class="flex flex-col items-start justify-center h-auto w-full gap-5 md:gap-20 bg-mygreen p-5 lg:p-20 pb-40"
+>
+  <p
+    [ngClass]="{
+      'text-2xl ': true,
+      'lg:text-4xl ': true,
+      'font-bold': true,
+      'text-slate-100': true,
+      'pb-20': true,
+      'transition-all': true,
+      'duration-1000': true,
+      transform: true,
+      'translate-x-20': !isVisible,
+      'opacity-100': isVisible,
+      'translate-y-0': isVisible,
+      'opacity-0': !isVisible
+    }"
+  >
+    How can data analysis be leveraged to reduce the store's
+    <span class="text-myyellow">ecological impact</span> while enhancing
+    customer well-being?
+  </p>
+
+  <div
+    class="relative flex flex-col md:flex-row items-center justify-around gap-y-36 2xl:px-20 w-full gap-8"
+  >
+    <app-card-menu
+      class="w-1/3"
+      page="/first"
+      color="slate-100"
+      titleColor="mygreen"
+      image="/img/waste1.png"
+      title="1. Reduce Waste"
+      text="Optimize stock management and reduce waste by identifying
+      consumption trends"
+    ></app-card-menu>
+
+    <app-card-menu
+    class="w-1/3"
+    page="/second"
+      color="mypink"
+      titleColor="white"
       image="/img/consumption.png"
-      title="Improved store organization to reduce overconsumption"
-      [number]="2"
-    ></app-card-home>
-  </div>
+      title="2. Reduce Overconsumption"
+      text="Improve store organization by studying purchase associations,
+      simplifying the customer experience."
+    ></app-card-menu>
 
-  <div class="flex-1 h-full w-1/3">
-    <app-card-home
-    (click)="navigate('third')"
-    image="/img/brain2.png"
-    title="Raising awareness of sustainable shopping practices"
-    [number]="3"
-  ></app-card-home>
+    <app-card-menu
+    class="w-1/3"
+    page="/third"
+      color="myyellow"
+      titleColor="white"
+      image="/img/ecology.png"
+      title="1. Reduce Waste"
+      text="Improve store organization by studying purchase associations,
+      simplifying the customer experience."
+    ></app-card-menu>
   </div>
-
-</div>
 </section>

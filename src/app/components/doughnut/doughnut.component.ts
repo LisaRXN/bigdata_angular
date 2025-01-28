@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, inject, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { Chart, registerables, ChartType } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { CsvTojsonService } from '../../services/csv-tojson.service';
+import { isPlatformBrowser } from '@angular/common';
 
 Chart.register(...registerables, ChartDataLabels);
 
@@ -11,7 +12,7 @@ Chart.register(...registerables, ChartDataLabels);
   templateUrl: './doughnut.component.html',
   styleUrl: './doughnut.component.css'
 })
-export class DoughnutComponent implements AfterViewInit, OnInit {
+export class DoughnutComponent implements AfterViewInit {
 
   chart!: Chart;
 
@@ -27,22 +28,22 @@ export class DoughnutComponent implements AfterViewInit, OnInit {
   @Input() numberRow:string = ""
   @Input() pctRow:string = ""
 
-    csvService = inject(CsvTojsonService)
+  private platformId: object = inject(PLATFORM_ID)
+  csvService = inject(CsvTojsonService)
   
-    ngOnInit(): void {
-      if(this.fileName){
-        this.csvService.getDatas(this.fileName).subscribe( 
-          (data) => {
-            this.setDatas(data)
-            this.Renderchart(this.labeldata, this.realdata, this.colordata, this.pct);
-          }
-        )
-      }
-    }
 
   ngAfterViewInit(): void {
     if (this.chart) {
       this.chart.destroy(); 
+    }
+
+    if(this.fileName){
+      this.csvService.getDatas(this.fileName).subscribe( 
+        (data) => {
+          this.setDatas(data)
+          this.Renderchart(this.labeldata, this.realdata, this.colordata, this.pct);
+        }
+      )
     }
 
   }
@@ -57,6 +58,9 @@ export class DoughnutComponent implements AfterViewInit, OnInit {
 
 
   Renderchart(labels: string[], data: number[], colors: string[], pct:string[]): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+    
     const ctx = document.getElementById(this.chartId) as HTMLCanvasElement;
 
     if (this.chart) {
@@ -107,4 +111,5 @@ export class DoughnutComponent implements AfterViewInit, OnInit {
     });
   }
 
+}
 }

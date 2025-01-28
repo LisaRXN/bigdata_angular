@@ -4,7 +4,6 @@ import { PieComponent } from '../../components/pie/pie.component';
 import { LineComponent } from '../../components/line/line.component';
 import { CommonModule } from '@angular/common';
 import { trigger, style, transition, animate } from '@angular/animations';
-import { After } from 'v8';
 
 @Component({
   selector: 'app-first',
@@ -17,22 +16,9 @@ import { After } from 'v8';
     trigger('fadeInOnLoad', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateX(20px)'}),
-        animate('0.5s 1.5s', style({ opacity: 1, transform: 'translateX(0)' })),
+        animate('0.5s 0.3s', style({ opacity: 1, transform: 'translateX(0)' })),
       ]),
-    ]),
-    trigger('fadeInOnLoad2', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(20px)'}),
-        animate('0.5s 2s', style({ opacity: 1, transform: 'translateX(0)' })),
-      ]),
-    ]),
-    trigger('fadeInOnLoad3', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(20px)'}),
-        animate('0.5s 2.5s', style({ opacity: 1, transform: 'translateX(0)' })),
-      ]),
-    ]),
-
+    ])
   ],
 })
 export class FirstComponent implements AfterViewInit, OnInit {
