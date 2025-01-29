@@ -17,6 +17,12 @@ module.exports = {
         'myrose1':'#e9605a',
         'myrose2':'#ff928f',
         'myrose3':'#fadcda',
+        'mygreen':'#469f78',
+        'mygreen2':'#e6f1ec',
+        'myyellow':'#f3cb5c',
+        'myyellow2':'#ffeebf',
+        'mypink':'#ea8383',
+        'myblue':'#87ccdb',
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
@@ -33,3 +39,4 @@ module.exports = {
   plugins: [],
   plugins: [],
 };
+
