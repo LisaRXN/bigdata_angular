@@ -1,59 +1,41 @@
-# DataAngular2
+# Data Analysis Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
 
-## Development server
+## Description
+This data analysis project focuses on analyzing user purchasing preferences, with a particular emphasis on optimizing product management, store organization, and the shopping journey. The goal is to reduce waste and promote sustainable consumption through in-depth analysis of purchasing data.
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+## Technologies Used
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This project was generated using:
 
-## Code scaffolding
+Angular 19.1.2 - Frontend framework for building the website
+Google Colab - Tool used for data analysis
+Chart.js with react-chartjs-2 - For creating charts within the app
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To set up the project locally, follow these steps:
 
-```bash
-ng generate --help
-```
+Clone the repository: git clone <repository-url>
+Navigate to the project directory: cd <project-directory>
+Install the necessary dependencies: npm install
 
-## Building
+## Development Server
 
-To build the project run:
+To start a local development server, run: ng serve
 
-```bash
-ng build
-```
+Once the server is running, open your browser and navigate to http://localhost:4200/. The application will automatically reload whenever you modify any of the source files.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Usage
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Once the app is running, you can interact with various visualizations and analyses on user purchasing behavior. Users can view charts representing sales trends, most purchased products, product associations, and more.
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
+## Contact
 
-For end-to-end (e2e) testing, run:
+For any questions, contact me at lisa.eriksen@epitech.eu
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

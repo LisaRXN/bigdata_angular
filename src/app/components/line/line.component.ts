@@ -12,20 +12,16 @@ Chart.register(...registerables, ChartDataLabels);
   templateUrl: './line.component.html',
   styleUrl: './line.component.css'
 })
-export class LineComponent implements AfterViewInit, OnInit{
+export class LineComponent implements AfterViewInit {
 
   chart!: Chart;
 
 
-  // labeldata: string[] = ['Monday', 'Thusday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'];
-  // realdata:number[] = [562388, 552505, 439399, 411314, 401903, 427295, 420070];
-  // realdata2:number[] = [145979, 150965, 139601, 134859, 132307, 133821, 128717];
-  // colordata: string[] = ['#4f52ff', '#ff928f'];
 
   labeldata:string[] = []
   realdata:number[] = []
   realdata2:number[] = []
-  colors:string[] = ['#4f52ff', '#ff928f']
+  colors:string[] = ['#469f78', '#ea8383']
   @Input() chartId:string = ''
   @Input() title:string = ""
   @Input() fileName:string = ""
@@ -33,18 +29,9 @@ export class LineComponent implements AfterViewInit, OnInit{
   @Input() numberRow:string = ""
   @Input() numberRow2:string = ""
   
+  private platformId: object = inject(PLATFORM_ID)
   csvService = inject(CsvTojsonService)
 
-
-  ngOnInit(): void {
-    if(this.fileName){
-      this.csvService.getDatas(this.fileName).subscribe( 
-        (data) => {
-          this.setDatas(data)
-        }
-      )
-    }
-  }
 
   setDatas(data:any[]){
     this.labeldata = data.map( (row => row[this.labelRow]))
@@ -53,17 +40,34 @@ export class LineComponent implements AfterViewInit, OnInit{
   }
 
   ngAfterViewInit(): void {
-    if (typeof document !== 'undefined' && this.chartId) {
-      this.Renderchart(this.labeldata, this.realdata, this.realdata2, this.colors);
+    if (this.chart) {
+      this.chart.destroy(); 
+    }
+    if(this.fileName){
+      this.csvService.getDatas(this.fileName).subscribe( 
+        (data) => {
+          this.setDatas(data)
+          this.Renderchart(this.labeldata, this.realdata, this.realdata2, this.colors);
+        }
+      )
     }
   }
 
   Renderchart(labels: string[], data: number[], data2: number[], colors: string[]): void {
+    
+    if (isPlatformBrowser(this.platformId)) {
+
     const ctx = document.getElementById(this.chartId) as HTMLCanvasElement;
 
     if (this.chart) {
       this.chart.destroy(); 
     }
+
+    if (!ctx) {
+      console.error('Chart container not found!');
+      return;  // Ne pas créer le graphique si l'élément n'existe pas
+    }
+  
 
     this.chart = new Chart(ctx, {
       type: 'line',
@@ -100,6 +104,7 @@ export class LineComponent implements AfterViewInit, OnInit{
       },
       plugins: [ChartDataLabels]
     });
+  }
   }
 
 }
