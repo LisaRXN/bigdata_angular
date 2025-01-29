@@ -1,10 +1,10 @@
 <div class="p-10 2xl:p-20 h-screen w-full bg-mygreen flex flex-col lg:flex-row gap-10 overflow-hidden">
-  <div class="w-full lg:w-1/2 lg:p-20">
+  <div class="w-full lg:w-1/2 lg:p-20 2xl:p-5">
     @if(isVisible){
           <h1 
           *ngIf="isVisible" [@fadeInOnLoad]
           [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
-          class="leading-tight 2xl:leading-snug text-4xl lg:text-6xl 2xl:text-8xl font-bold text-slate-100"
+          class="leading-tight text-4xl lg:text-6xl 2xl:text-8xl font-bold text-slate-100"
           >
           Optimize the store layout to
            <span class="text-myyellow">reduce overconsumption</span>
@@ -18,8 +18,8 @@
 
 
 <section class="h-auto lg:h-[400px] bg-slate-100 flex flex-col justify-center gap-10 w-full py-10">
-    <p class="text-xl font-bold text-slate-600 p-10 px-20">
-      How can we optimize the store layout through purchase associations to minimize customer shopping time, reduce overconsumption and increase customer well-being?
+    <p class="text-xl 2xl:text-2xl font-bold text-slate-600 p-10 px-20">
+      <span class="text-amber-400 font-bold">Question: </span> how can we optimize the store layout through purchase associations to minimize customer shopping time, reduce overconsumption and increase customer well-being?
     </p>
     <div class="ml-[-100px] bg-slate-300 rounded-xl w-full md:w-[700px] flex items-center p-5">
       <p class="ml-[150px] text-xl xl:text-2xl 2xl:text-4xl font-bold text-white">
@@ -99,13 +99,13 @@
     From the analysis of frequent associations between departments and aisles, we can draw the following conclusions:
   </p>
 
-  <div class="flex flex-col lg:flex-row items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-10 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40">
     <div class="flex flex-col items-center justify-center w-full h-auto lg:w-auto lg:h-[700px] 2xl:h-[500px] flex-1 p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
     <div class="">
       <img src="/img/time2.png" class="h-[150px]" alt="">
     </div>
     <p class="font-bold text-center p-10 text-mygreen">Reducing Shopping Time </p>
-    <p class="">
+    <p class="p-5">
       Placing frequently associated aisles close together simplifies navigation and saves valuable shopping time. Customers can easily find related products without unnecessary movement across the store. This thoughtful organization improves efficiency, and creates a more enjoyable experience.
     </p>
   </div>
@@ -116,7 +116,7 @@
     </div>
     <p class="font-bold text-center p-10 text-mygreen">Reducing Overconsumption</p>
     <!-- <p class="text-justify">An optimized layout that groups complementary products intuitively helps reduce impulsive purchases of unnecessary items. By guiding customers through well-organized sections, they focus more on their intended purchases rather than wandering through unrelated areas. Additionally, promoting less popular products within these zones through targeted promotions ensures a balanced consumption pattern and minimizes inventory waste, fostering a more thoughtful shopping process.</p> -->
-    <p class="">
+    <p class="p-5">
       An optimized layout that groups complementary products helps customers focus on their intended purchases, reduces impulsive buying, and encourages balanced consumption by promoting less popular items in well-organized sections, minimizing inventory waste.    </p>
   </div>
 
@@ -126,7 +126,7 @@
       <img src="/img/fidelity2.png" class="h-[150px]" alt="">
     </div>
     <p class="font-bold text-center p-10 text-mygreen">Enhancing Customer Well-being and Fidelity</p>
-    <p class="">
+    <p class="p-5">
       A seamless and intuitive shopping experience enhances customer well-being by reducing stress and increasing satisfaction. Thoughtful product placement that aligns with customer preferences builds trust, fosters loyalty, and encourages repeat visits, strengthening long-term relationships.    
     </p>
   </div>

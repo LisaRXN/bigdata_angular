@@ -1,10 +1,10 @@
 <div class="p-10 2xl:p-20 h-screen w-full bg-mygreen flex flex-col lg:flex-row gap-10 overflow-hidden">
-  <div class="w-full lg:w-1/2 lg:p-20">
+  <div class="w-full lg:w-1/2 lg:p-20 2xl:p-5">
       @if(isVisible){
         <h1 
         *ngIf="isVisible" [@fadeInOnLoad]
         [ngStyle]="{'display': isVisible ? 'block' : 'none'}"
-        class="leading-tight 2xl:leading-snug text-4xl lg:text-6xl 2xl:text-8xl font-bold text-slate-100"
+        class="leading-tight text-4xl lg:text-6xl 2xl:text-8xl font-bold text-slate-100"
         >
         Optimized stock management to
          <span class="text-myyellow">reduce waste</span>
@@ -19,8 +19,8 @@
 
 <section class="h-auto lg:h-[400px] bg-slate-100 flex flex-col justify-center gap-10 w-full py-10">
 
-<p class="text-xl font-bold text-slate-600 px-10 lg:p-20 ">
-  How can we optimized stock management and predict the products that will be popular in the future to better manage inventory, avoid stockouts and reduce waste?
+<p class="text-xl 2xl:text-2xl font-bold text-slate-600 px-10 lg:p-20">
+  <span class="text-amber-400 font-bold">Question: </span>how can we optimized stock management and predict the products that will be popular in the future to better manage inventory, avoid stockouts and reduce waste?
 </p>
 
   <div class="ml-[-100px] bg-slate-300  rounded-xl w-full md:w-[650px] flex items-center p-5">
@@ -207,20 +207,22 @@
 
   <div class="flex flex-col lg:flex-row items-center justify-center gap-20 2xl:gap-32 w-full text-md 2xl:text-lg text-slate-700  pb-40">
     
-    <div class="flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
+    <div class=" w-full lg:w-1/2 flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
       <div class="">
         <img src="/img/stock3.png" class="h-[150px]" alt="">
       </div>
       <p class="font-bold text-center p-10 text-mygreen">Optimizing Stock Levels</p>
-      <p class=" text-justify ">By forecasting which products are likely to be reordered, businesses can adjust their stock levels to meet expected demand, minimizing both shortages and excess inventory.</p>
+      <p class=" text-justify xl:p-10 ">
+        By forecasting which products are likely to be reordered, businesses can adjust their stock levels to meet expected demand, minimizing both shortages and excess inventory.</p>
     </div>
 
-    <div class="flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
+    <div class=" w-full lg:w-1/2 flex flex-1 flex-col items-center justify-center h-[600px] 2xl:h-[500px] p-5 2xl:p-10 bg-slate-100 rounded-lg shadow-md">
       <div class="">
         <img src="/img/ecology.png" class="h-[150px]" alt="">
       </div>
       <p class="font-bold text-center p-10 text-mygreen">Reducing Waste</p>
-      <p class=" text-justify ">Accurate demand forecasting helps avoid overstocking, which can lead to waste, particularly for perishable items, fostering more sustainable operations.</p>
+      <p class=" text-justify xl:p-10 ">
+        Accurate demand forecasting helps avoid overstocking, which can lead to waste, particularly for perishable items, fostering more sustainable operations.</p>
     </div>
 </div>
 

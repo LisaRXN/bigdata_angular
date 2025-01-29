@@ -22,7 +22,6 @@ export class CsvTojsonService {
 
     getDatas(fileName: string): Observable<any[]> {
       return this.http
-      // .get('http://localhost:4200/csv/' + fileName, { responseType: 'text' as 'json' })
       .get(`/csv/${fileName}`, { responseType: 'text' as 'json' }) 
       .pipe(
         tap( (results: any) => {
@@ -31,7 +30,6 @@ export class CsvTojsonService {
             skipEmptyLines: true
           }).data;
           this.datas = parsedData;
-          console.log('Parsed Data:', parsedData);  // Vérifie le contenu après le parsing
         }
         ),
         map(() => this.datas)
