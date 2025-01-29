@@ -70,4 +70,8 @@ export class AppComponent implements OnInit {
     this.router.navigate(['home'])
   }
 
+  navigate(page:string ){
+    this.router.navigate([page])
+  }
+
 }
